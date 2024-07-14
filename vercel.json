@@ -9,7 +9,7 @@
         "src" : "build_files.sh",
         "use" : "@vercel/static-build",
         "config" : {
-            "distDir": "static"
+            "distDir": "staticfiles_build"
         }
     }],
     "routes" : [
@@ -22,5 +22,5 @@
             "dest" :"PortFolio/wsgi.py"
         }
     ],
-    "outputDirectory" : "static"
+    "outputDirectory" : "staticfiles_build"
 }
