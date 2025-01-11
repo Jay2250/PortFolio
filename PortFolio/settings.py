@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4&d#vf-1dlc86k74nnx5x%yhllxt6gh_r6hn0-sv$lsjo(sr&z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
@@ -128,21 +128,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
 
 # Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-<<<<<<< HEAD
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')  # Your Gmail address
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # The generated App Password
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-=======
->>>>>>> parent of 1348c51 (Added email sent functionality)
-=======
+
+
 EMAIL_HOST_USER = 'jayeshchauriwar@gmail.com'  # Your Gmail address
 EMAIL_HOST_PASSWORD = 'epgrrbtohkfhtlpr'  # The generated App Password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
->>>>>>> parent of 7e3d6ae (data.env)
