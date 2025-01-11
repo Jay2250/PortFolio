@@ -1,7 +1,6 @@
 asgiref==3.8.1
 Django==5.0.7
 phonenumbers==8.13.40
-<<<<<<< HEAD
 pillow==10.4.0
 platformdirs==4.3.6
 prometheus_client==0.21.0
@@ -27,8 +26,6 @@ rpds-py==0.20.0
 scikit-learn==1.5.2
 scipy==1.14.1
 Send2Trash==1.8.3
-=======
->>>>>>> parent of 7e3d6ae (data.env)
 setuptools==70.2.0
 sqlparse==0.5.0
 tzdata==2024.1
