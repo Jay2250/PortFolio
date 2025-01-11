@@ -4,16 +4,10 @@ from django.contrib import messages
 from Base import models
 from Base.models import Contact
 import re
-import traceback
 import phonenumbers
 from phonenumbers import carrier
 from phonenumbers.phonenumberutil import number_type
 # from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
-from django.conf import settings
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-
 
 # Create your views here.
 
@@ -45,32 +39,19 @@ def contact(request):
             messages.error(request, 'invaild email try again ')
             return render(request, 'index.html')
         print(len(number))
-        # if len(number) > 9 and len(number) <= 13:
-        #     pass
-        # else:
-        #     messages.error(request, 'invaild number please try again ')
-        #     return render(request, 'index.html')
-        
-        # try:
-        #     print('Connecting to DB...')
-        #     ins = models.Contact(name=name, email=email,
-        #                      content=content, number=number)
-        #     print('Connected to DB. Saving to DB')
-        #     ins.save()
-        #     print('Saved to DB')
-        # except:
-        #      traceback.print_exc()
-        subject = f"New Contact from PortFolio, Form Submission from {name}"
-        message_body = f"Name: {name}\nEmail: {email}\nMessage:\n{content}"
-        recipient_list = ['jayeshchauriwar@gmail.com']
-            
-        try:
-                print('Sending Mail')
-                send_mail(subject, message_body, email, recipient_list)
-                return HttpResponse(content="OK", status=200)
-        except Exception as e:
-                return HttpResponse(f"Failed to send email: {e}")
-        
+        if len(number) > 9 and len(number) < 13 and carrier._is_mobile(number_type(phonenumbers.parse(number))):
+            pass
+        else:
+            messages.error(request, 'invaild number please try again ')
+            return render(request, 'index.html')
+        ins = models.Contact(name=name, email=email,
+                             content=content, number=number)
+        ins.save()
+        messages.success(
+            request, 'Thank You for contacting me!! Your message has been saved ')
+        print('data has been saved to database')
+
+        print('The request is no pass ')
     return render(request, 'index.html')
     
     

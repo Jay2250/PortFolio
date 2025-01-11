@@ -130,6 +130,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
 
 # Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -139,3 +140,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')  # Your Gmail address
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # The generated App Password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+=======
+>>>>>>> parent of 1348c51 (Added email sent functionality)
